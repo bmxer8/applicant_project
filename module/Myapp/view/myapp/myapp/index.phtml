@@ -1,0 +1,22 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Myapp</title>
+    </head>
+    <body>
+        <h2> here! </h2>
+        <table>
+            <tr><th>Id</th><th>Name</th><th>Email</th></tr>
+        <?php
+        echo "<tr><td>". $contact->row['id']."<td>".$contact->row['name']."</td>"
+                ."<td>".$contact->row['email']."</td></tr>";
+            
+        ?>
+        </table>
+    </body>
+</html>
