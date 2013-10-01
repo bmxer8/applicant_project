@@ -1,10 +1,15 @@
 <?php
+/**
+* This class allows the view to load the Contact class
+* 
+* @package    MyappController
+* @author      paul heika <bike8@hotmail.com>
+*/
 namespace Myapp\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Myapp\Model\Contact;
-//use Myapp\Model\AbstractModel;
 
 
 class MyappController extends AbstractActionController
@@ -14,7 +19,10 @@ class MyappController extends AbstractActionController
         $contact->load(1)->getData();
         return new ViewModel(array('contact' => $contact));
     }
-
+    /**
+     * viewAction() uses the url parameter to load the Contact and 
+     * to store the result. 
+     */
     public function viewAction()
     {
         

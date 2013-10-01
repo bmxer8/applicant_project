@@ -1,10 +1,18 @@
 update AbstractModel.php and module/Myapp/src/Myapp/Model/AbstractModel.php
 with your database credentials.
 
+ensure that mysqlnd is installed to php so that $stmt->get_result() works.
+
+php -m | grep mysqlnd 
+
+mysqlnd also requires long passwords on mysql, if you get an error about [mysql_old_password]
+run SET PASSWORD FOR 'user'@'localhost' = PASSWORD('yourpasswd') in mysql
+
 add the following to your httpd.conf where applicant.localhost is defined in 
 your /etc/hosts file.  DocumentRoot and Directory will need to be adjusted 
 to where the applicant_project directory is located.
 
+/* make sure to read this file as raw since the github viewer messes up the VirtualHost definition */
 <VirtualHost applicant.localhost:80>
     ServerName applicant.localhost
     DocumentRoot /var/www/html/applicant_project/public
@@ -28,3 +36,5 @@ php composer.phar install
 
 to run the application 
 http://applicant.localhost/myapp/view?id=2
+
+
