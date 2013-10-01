@@ -21,9 +21,9 @@ Class  AbstractModel
     function __construct($db=array()) {
             $default = array(
                     'host' => 'localhost',
-                    'user' => 'kitty',
-                    'pass' => 'newpassword8',
-                    'db' => 'webfiles'
+                    'user' => 'user',
+                    'pass' => 'passwd',
+                    'db' => 'database'
             );
             $db = array_merge($default,$db);
             $this->con=mysqli_connect($db['host'],$db['user'],$db['pass'],$db['db']) or die ('Error connecting to MySQL');
